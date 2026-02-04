@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<title>MBTI Test</title>
+</head>
+<body>
+
+<h1>MBTI Test</h1>
+
+<p>1. Та:</p>
+<input type="radio" name="EI" value="E"> гадагшаа<br>
+<input type="radio" name="EI" value="I"> дотогшоо<br>
+
+<p>2. Та:</p>
+<input type="radio" name="SN" value="S"> Бодит, баримтад анхаардаг <br>
+<input type="radio" name="SN" value="N"> Төсөөлөл, санаанд анхаардаг<br>
+
+<p>3. Та:</p>
+<input type="radio" name="TF" value="T"> Логик, бодитой <br>
+<input type="radio" name="TF" value="F"> Сэтгэл, мэдрэмж <br>
+
+<p>4. Та:</p>
+<input type="radio" name="JP" value="J"> Төлөвлөгөөтэй<br>
+<input type="radio" name="JP" value="P"> Чөлөөтэй, уян хатан<br>
+
+<br>
+<button onclick="showResult()">Үр дүн харах</button>
+
+<h2 id="result"></h2>
+<p id="desc"></p>
+
+<script>
+function showResult() {
+    let ei = document.querySelector('input[name="EI"]:checked');
+    let sn = document.querySelector('input[name="SN"]:checked');
+    let tf = document.querySelector('input[name="TF"]:checked');
+    let jp = document.querySelector('input[name="JP"]:checked');
+
+    if (!ei || !sn || !tf || !jp) {
+        alert("Бүх асуултад хариулна уу!");
+        return;
+    }
+
+    let mbti = ei.value + sn.value + tf.value + jp.value;
+
+    document.getElementById("result").innerText =
+        "Таны MBTI: " + mbti;
+
+    document.getElementById("desc").innerText =
+        "Энэ бол таны зан төлвийн баримжаа төрөл юм.";
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
